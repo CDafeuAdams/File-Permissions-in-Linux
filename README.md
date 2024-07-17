@@ -49,50 +49,36 @@ The following code demonstrates how I used Linux commands to do this:
 
 <img src="https://imgur.com/g0o89zn.png" height="80%" width="80%" alt="Check File and Directory"/>
 
-<h2>Environments Used </h2>
+- <b> The file permissions displayed the file and directory to make sure the read permissions were removed from the owner type of group. The ls -la command was used to display permissions to files and directories including the hidden files.</b>
 
-- <b>Windows 10</b> (21H2)
+<h2>Change file permissions on a hidden file</h2>
 
-- <h2>Environments Used </h2>
+- <b>The research team at my organization recently archived the project_x.txt file. They do not want anyone to have write access to this project, however, the user and group should have read access.
 
-- <b>Windows 10</b> (21H2)
+The following code demonstrates how I used Linux commands to change the permissions:
+</b>
 
-- <h2>Environments Used </h2>
+<img src="https://imgur.com/rRi2lls.png" height="80%" width="80%" alt="Check File and Directory"/>
 
-- <b>Windows 10</b> (21H2)
+- <b>The file permissions on the hidden file .project_x.txt was changed so that both the user and the group can read, but not write to the file. The first two lines of the screenshot display the commands I entered, and the other lines display the output of the second command. I know .project_x.txt  is a hidden file because it starts with a period (.). In this example, I removed write permissions from the user and group, and added read permissions to the group. I removed write permissions from the user with u-w. Then, I removed write permissions from the group with g-w, and added read permissions to the group with g+r.</b>
 
-- <h2>Environments Used </h2>
+- <h2>Change Directory Permissions </h2>
 
-- <b>Windows 10</b> (21H2)
+- <b>My organization only wants the researcher2 user to have access to the drafts directory and its contents. So no users other than researcher2 should have execute permissions.
 
-<p align="center">
-Launch the utility: <br/>
-<img src="https://i.imgur.com/62TgaWL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Select the disk:  <br/>
-<img src="https://i.imgur.com/tcTyMUE.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Enter the number of passes: <br/>
-<img src="https://i.imgur.com/nCIbXbg.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Confirm your selection:  <br/>
-<img src="https://i.imgur.com/cdFHBiU.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Wait for process to complete (may take some time):  <br/>
-<img src="https://i.imgur.com/JL945Ga.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Sanitization complete:  <br/>
-<img src="https://i.imgur.com/K71yaM2.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Observe the wiped disk:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
+The following code demonstrates how I used Linux commands to change the permissions:
+</b> 
+
+<img src="https://imgur.com/rRi2lls.png" height="80%" width="80%" alt="Check File and Directory"/>
+
+- <b>When listed it is seen that the file permissions have been updated so both the user and group are able to read and not write the file. The output displays the permission listing for several files and directories. Line 1 indicates the current directory (projects), and line 2 indicates the parent directory (home). Line 3 indicates a regular file titled <em>.project_x.txt.</em> Line 4 is the directory (drafts) with restricted permissions. You are able to see that only researcher2 has execute permissions. It was previously listed that the group had execute permissions, so I used the <em>chmod</em> command to remove them. The <em>researcher2</em> user already had execute permissions, so they did not need to be added.</b>
+
+- <h2>Summary </h2>
+
+- <b>I changed and updated multiple permissions to match the level of authorization my organization wanted for files and directories in the <em>projects</em> directory. The first step in this was using <em>ls -la</em> to check the permissions for the directory. This helped me to make the proper decisions in following the steps. I used the <em>chmod</em> command several times to change the permissions on files and directories.</b>
+
+
+
 
 <!--
  ```diff
